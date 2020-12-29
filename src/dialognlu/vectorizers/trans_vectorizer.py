@@ -25,7 +25,7 @@ class TransVectorizer:
             self.valid_start = '▁'
         elif self.tokenizer_type == 'XLNetTokenizer':
             self.valid_start = '▁'
-        elif self.tokenizer_type == 'RobertaTokenizer':
+        elif self.tokenizer_type in ['RobertaTokenizer', 'XLMRobertaTokenizer']:
             self.valid_start = 'Ġ'
         else:
             raise Exception('%s is not supported tokenizer' % self.tokenizer_type)

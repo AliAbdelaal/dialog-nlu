@@ -20,7 +20,8 @@ TYPE_2_JOINT_MODEL = {
     'TFDistilBertModel': JointTransDistilBertModel,
     'TFAlbertModel': JointTransAlbertModel,
 #    'TFXLNetModel': JointTransXlnetModel,
-    'TFRobertaModel': JointTransRobertaModel
+    'TFRobertaModel': JointTransRobertaModel,
+    'TFXLMRobertaModel': JointTransRobertaModel
 }
 
 
@@ -49,7 +50,7 @@ def get_transformer_model(pretrained_model_name_or_path, cache_dir, from_pt, lay
         model = trans_model.albert
 #    elif trans_type == 'TFXLNetModel':
 #        model = trans_model.transformer
-    elif trans_type == 'TFRobertaModel':
+    elif trans_type in ['TFRobertaModel', 'TFXLMRobertaModel']:
         model = trans_model.roberta
     else:
         raise Exception("%s is not supported yet!" % trans_type)
